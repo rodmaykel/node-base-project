@@ -5,19 +5,22 @@
     "timestamp": false,
     "delimiter": "|"
   },
+  "images": {
+    "resize": false
+  },
   "app": {
     "port": 80,
-    "base_url": "http://fundmyjourney.com",
-    "cdn": "http://fundmyjourney.com",
+    "base_url": "http://example.com",
+    "cdn": "http://example.com",
     "images_folder": "public/user_images/journeys",
-    "images_url": "http://fundmyjourney.com/user_images/journeys" 
+    "images_url": "http://example.com/user_images/journeys" 
   },
   "model": {
     "mongodb": "mongodb://localhost/fmj"
   },
   "facebook": {
-    "client_id": "305814279556173",
-    "client_secret": "b055c2190519f061cb19ccde9aabf126",
-    "callback_url": "http://fundmyjourney.com/facebook/cb"
+    "client_id": "",
+    "client_secret": "",
+    "callback_url": "http://example.com/facebook/cb"
   }
 }

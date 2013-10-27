@@ -16,11 +16,11 @@
     "images_url": "http://example.com/user_images/journeys" 
   },
   "model": {
-    "mongodb": "mongodb://localhost/fmj"
+    "mongodb": "mongodb://localhost/sample"
   },
   "facebook": {
     "client_id": "",
     "client_secret": "",
-    "callback_url": "http://fundmyjourney.com/facebook/cb"
+    "callback_url": "http://example.com/facebook/cb"
   }
 }
