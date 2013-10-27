@@ -1,0 +1,26 @@
+{
+  "env": "test",
+  "logs": {
+    "level": "debug",
+    "timestamp": false,
+    "delimiter": "|"
+  },
+  "images": {
+    "resize": false
+  },
+  "app": {
+    "port": 80,
+    "base_url": "http://example.com",
+    "cdn": "http://example.com",
+    "images_folder": "public/user_images/journeys",
+    "images_url": "http://example.com/user_images/journeys" 
+  },
+  "model": {
+    "mongodb": "mongodb://localhost/fmj"
+  },
+  "facebook": {
+    "client_id": "",
+    "client_secret": "",
+    "callback_url": "http://fundmyjourney.com/facebook/cb"
+  }
+}
