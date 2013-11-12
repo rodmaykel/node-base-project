@@ -7,7 +7,9 @@ var express = require('express')
   , sample = require('./routes/sample')
   , http = require('http')
   , path = require('path')
-  , logger = require('./lib/logger');
+  , logger = require('./lib/logger')
+  , config = require('./config/config')
+  ;
 
 var app = express();
 
@@ -32,8 +34,8 @@ if ('dev' == app.get('env')) {
 
 app.get('/sample', sample.index);
 
-http.createServer(app).listen(app.get('port'), function(){
-  logger.i("APP", 'Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(config.get('app:port'), function(){
+  logger.i("APP", 'Express server listening on port ' + config.get('app:port'));
 });
 
 module.exports = app; // This is for testing

@@ -1,14 +1,17 @@
 MOCHA_OPTS= --check-leaks
 REPORTER = xunit
 
-test: clean run test-unit
+test: clean init install test-unit
 
 init: 
 	mkdir build
 	mkdir build/testResults
 
-run: init
+install:
 	@NODE_PATH=/tmp/node_modules/ npm install
+
+run: install
+	@NODE_PATH=/tmp/node_modules/ npm start
 
 test-unit:
 	@NODE_PATH=/tmp/node_modules/ \

@@ -9,7 +9,7 @@
     "resize": false
   },
   "app": {
-    "port": 80,
+    "port": 8080,
     "base_url": "http://example.com",
     "cdn": "http://example.com",
     "images_folder": "public/user_images/journeys",
