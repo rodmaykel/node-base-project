@@ -27,6 +27,13 @@ test-local:
 		--reporter dot \
 		$(MOCHA_OPTS)
 
+test-local-w:
+	@NODE_PATH=/tmp/node_modules/ \
+		mocha \
+		--reporter dot \
+		$(MOCHA_OPTS) \
+		--watch
+
 clean:
 	rm -rf build
 	rm -rf /tmp/node_modules
