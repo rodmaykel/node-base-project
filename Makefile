@@ -34,8 +34,12 @@ test-local-w:
 		$(MOCHA_OPTS) \
 		--watch
 
+test-cov:
+	istanbul cover _mocha -- -R spec
+
 clean:
 	rm -rf build
+	rm -rf coverage
 	rm -rf /tmp/node_modules
 
 .PHONY: test test-unit test-acceptance benchmark clean
