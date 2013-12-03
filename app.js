@@ -7,7 +7,7 @@ var express = require('express')
 	, http = require('http')
 	, path = require('path')
 	, logger = require('./lib/logger')
-	,config = require('./config/config')
+	, config = require('./config/config')
 	;
 
 var app = express();
