@@ -1,5 +1,6 @@
 MOCHA_OPTS= --check-leaks
 REPORTER = xunit
+STYLE_SCRIPT= scripts/jsstyle/jsstyle -o leading-comma-ok,doxygen
 
 test: clean init install test-unit
 
@@ -20,7 +21,7 @@ test-unit:
 		--recursive \
 		--reporter $(REPORTER) \
 		$(MOCHA_OPTS) > build/testResults/mocha.xml
-	echo "Test complete..."
+	echo ">> Test complete..."
 
 test-local:
 	@NODE_PATH=/tmp/node_modules/ \
@@ -40,6 +41,14 @@ test-local-w:
 test-cov:
 	istanbul cover _mocha --  --recursive -R spec
 	tar -zcvf coverage.tar.gz coverage
+
+test-style:
+	echo ">> Starting style check"
+	$(STYLE_SCRIPT) app.js
+#	$(STYLE_SCRIPT) routes/*.js
+#	$(STYLE_SCRIPT) test/*.js
+#	$(STYLE_SCRIPT) lib/*.js
+#	$(STYLE_SCRIPT) models/*.js
 
 clean:
 	rm -rf build

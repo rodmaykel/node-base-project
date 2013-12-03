@@ -5,6 +5,7 @@ To be used as initial codebase for node projects.
 ###Server requirements
 
 - Make
+- Perl (for jsstyle)
 
 npm modules
 ```
