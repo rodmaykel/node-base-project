@@ -36,6 +36,7 @@ test-local-w:
 
 test-cov:
 	istanbul cover _mocha -- -R spec
+	tar -zcvf coverage.tar.gz coverage
 
 clean:
 	rm -rf build
