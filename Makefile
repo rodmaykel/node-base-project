@@ -45,10 +45,10 @@ test-cov:
 test-style:
 	echo ">> Starting style check"
 	$(STYLE_SCRIPT) app.js
-#	$(STYLE_SCRIPT) routes/*.js
-#	$(STYLE_SCRIPT) test/*.js
-#	$(STYLE_SCRIPT) lib/*.js
-#	$(STYLE_SCRIPT) models/*.js
+#	find test -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
+#	find routes -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
+#	find lib -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
+#	find models -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
 
 clean:
 	rm -rf build

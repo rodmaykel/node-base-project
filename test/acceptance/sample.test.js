@@ -5,21 +5,22 @@ var app = require('../../app');
 var logger = require('../../lib/logger');
 
 var LOG = false;
+var TAG = 'sample.test';
 
-describe('Sample', function(){
+describe('Sample', function (){
 
   before(function(){
-    logger.d('sample.test', "Sample test: started");
+    logger.d(TAG, "Sample test: started");
   }) // before
   
   describe('#sample_success', function(){
     before(function(){
-      logger.d('sample.test', "#sample_success: started");
+      logger.d(TAG, "#sample_success: started");
     }) // before
 
 
     beforeEach(function(){
-      logger.d('sample.test', "===================================================");
+      logger.d(TAG, "===================================================");
     }) // before
     
     
@@ -41,7 +42,7 @@ describe('Sample', function(){
     
     
     after(function(done) {
-      logger.d('sample.test', "Sample test: finished");
+      logger.d(TAG, "Sample test: finished");
       done();
     }) // after
 
