@@ -12,5 +12,9 @@
     "ejs": "*",
     "should": "*",
     "supertest": "*"
+  },
+  "devDependencies": {
+    "xunit-file": "*",
+    "mocha": "*"
   }
 }

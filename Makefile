@@ -1,5 +1,7 @@
 MOCHA_OPTS= --check-leaks
-REPORTER = xunit
+MOCHA_SCRIPT = ./node_modules/.bin/mocha
+REPORTER = xunit-file
+XUNIT_ENV = XUNIT_FILE=build/testResults/mocha.xml LOG_XUNIT=true
 STYLE_SCRIPT= scripts/jsstyle/jsstyle -o leading-comma-ok,doxygen
 
 test: clean init install test-unit
@@ -16,23 +18,24 @@ run: install
 
 test-unit:
 	@NODE_PATH=/tmp/node_modules/ \
+		$(XUNIT_ENV) \
 		NODE_ENV=test \
-		mocha \
+		$(MOCHA_SCRIPT) \
 		--recursive \
 		--reporter $(REPORTER) \
-		$(MOCHA_OPTS) > build/testResults/mocha.xml
+		$(MOCHA_OPTS)
 	echo ">> Test complete..."
 
 test-local:
 	@NODE_PATH=/tmp/node_modules/ \
-		mocha \
+		$(MOCHA_SCRIPT) \
 		--recursive \
 		--reporter dot \
 		$(MOCHA_OPTS)
 
 test-local-w:
 	@NODE_PATH=/tmp/node_modules/ \
-		mocha \
+		$(MOCHA_SCRIPT) \
 		--recursive \
 		--reporter dot \
 		$(MOCHA_OPTS) \
