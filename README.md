@@ -4,8 +4,10 @@ To be used as initial codebase for node projects.
 
 ###Server requirements
 
-- Make
-- Perl (for jsstyle)
+- npm
+- node
+- make
+- perl (for jsstyle)
 
 npm modules
 ```
