@@ -1,3 +1,0 @@
-[submodule "scripts/jsstyle"]
-	path = scripts/jsstyle
-	url = git://github.com/davepacheco/jsstyle.git

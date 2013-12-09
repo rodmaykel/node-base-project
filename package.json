@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "xunit-file": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "jshint": "*"
   }
 }
