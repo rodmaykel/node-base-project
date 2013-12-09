@@ -34,8 +34,8 @@ if ('development' === app.get('env')) {
 app.get('/sample', sample.index);
 
 http.createServer(app).listen(config.get('app:port'), function () {
-	logger.i('APP', 'Express server listening on port '
-		+ config.get('app:port'));
+	logger.i('APP', 'Express server listening on port ' + 
+		config.get('app:port'));
 });
 
 module.exports = app; // This is for testing

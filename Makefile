@@ -2,7 +2,7 @@ MOCHA_OPTS= --check-leaks
 MOCHA_SCRIPT = ./node_modules/.bin/mocha
 REPORTER = xunit-file
 XUNIT_ENV = XUNIT_FILE=build/testResults/mocha.xml LOG_XUNIT=true
-STYLE_SCRIPT= scripts/jsstyle/jsstyle -o leading-comma-ok,doxygen
+STYLE_SCRIPT= jshint
 
 test: clean init install test-unit
 
@@ -48,10 +48,10 @@ test-cov:
 test-style:
 	echo ">> Starting style check"
 	$(STYLE_SCRIPT) app.js
-#	find test -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
-#	find routes -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
-#	find lib -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
-#	find models -type f -name "*.js" -exec $(STYLE_SCRIPT) {} +
+	$(STYLE_SCRIPT) test
+	$(STYLE_SCRIPT) routes
+	$(STYLE_SCRIPT) lib
+	$(STYLE_SCRIPT) models
 
 clean:
 	rm -rf build

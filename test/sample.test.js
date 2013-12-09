@@ -10,22 +10,22 @@ describe('Sample', function(){
 
   before(function(){
     logger.d('sample.test', "Sample test: started");
-  }) // before
+  }); // before
   
   describe('#sample_success', function(){
     before(function(){
       logger.d('sample.test', "#sample_success: started");
-    }) // before
+    }); // before
 
 
     beforeEach(function(){
       logger.d('sample.test', "===================================================");
-    }) // before
+    }); // before
     
     
     it('sample dummy test', function(done){
       done();
-    }) // it
+    }); // it
 
     it('sample should response success:1', function(done){
       supertest(app)
@@ -37,15 +37,13 @@ describe('Sample', function(){
           should.equal(res.body.success, 1);
           done();
         });
-    }) // it
+    }); // it
     
     
     after(function(done) {
       logger.d('sample.test', "Sample test: finished");
       done();
-    }) // after
+    }); // after
 
   }); // describe
 });
-
-
