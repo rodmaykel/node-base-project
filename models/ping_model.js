@@ -1,4 +1,4 @@
-var db = require('./_mongodb')
+var db = require('./_mongodb');
 // TODO: make flexible such that the database used e.g. mongodb/mysql is interchangeable
 
 module.exports = {
@@ -16,4 +16,4 @@ module.exports = {
 			}
 		});
 	}
-}
+};
