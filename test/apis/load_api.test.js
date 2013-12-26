@@ -1,9 +1,10 @@
 var assert = require('assert');
 var should = require('should');
+var sinon = require('sinon');
 var supertest = require('supertest');
 var app = require('../../app');
 var logger = require('../../lib/logger');
-
+var ping_model = require('../../models/ping_model');
 var TAG = "load_api.test";
 
 describe('api:load_api', function(){
@@ -15,8 +16,12 @@ describe('api:load_api', function(){
   describe('#load_api', function(){
     before(function(){
       logger.d(TAG, "#load_api: started");
+      sinon
+        .stub(ping_model, 'check')
+        .yields(0);
     }); // before
     after(function(done) {
+      ping_model.check.restore();
       logger.d(TAG, "#load_api: finished");
       done();
     }); // after
