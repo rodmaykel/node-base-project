@@ -13,5 +13,6 @@ npm modules
 ```
 $ sudo npm install -g mocha
 $ sudo npm install -g istanbul
+$ sudo npm install -g jshint
 ```
 

@@ -45,6 +45,7 @@ test-cov:
 	istanbul cover _mocha --  --recursive -R spec
 	tar -zcvf coverage.tar.gz coverage
 
+# http://jshint.com/docs/options/
 test-style:
 	echo ">> Starting style check"
 	$(STYLE_SCRIPT) app.js
