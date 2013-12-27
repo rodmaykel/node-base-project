@@ -4,25 +4,23 @@ var supertest = require('supertest');
 var app = require('../app');
 var logger = require('../lib/logger');
 
-var LOG = false;
+var TAG = 'sample.test';
 
 describe('Sample', function(){
-
-  before(function(){
-    logger.d('sample.test', "Sample test: started");
-  }); // before
   
   describe('#sample_success', function(){
     before(function(){
-      logger.d('sample.test', "#sample_success: started");
+      logger.d(TAG, "#sample_success: started");
     }); // before
-
+    after(function(done) {
+      logger.d(TAG, "#sample_success: finished");
+      done();
+    }); // after
 
     beforeEach(function(){
-      logger.d('sample.test', "===================================================");
-    }); // before
-    
-    
+      logger.d(TAG, "===================================================");
+    }); // beforeEach
+        
     it('sample dummy test', function(done){
       done();
     }); // it
@@ -37,13 +35,7 @@ describe('Sample', function(){
           should.equal(res.body.success, 1);
           done();
         });
-    }); // it
-    
-    
-    after(function(done) {
-      logger.d('sample.test', "Sample test: finished");
-      done();
-    }); // after
+    }); // it    
 
   }); // describe
 });

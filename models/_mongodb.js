@@ -1,5 +1,5 @@
 var mongoq = require('mongoq');
-config = require('../config/config.js');
+config = require('../config/_config.js');
 
 var db = mongoq(config.get('model:mongodb'));
 

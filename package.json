@@ -11,11 +11,13 @@
     "nconf": "0.6.7",
     "ejs": "*",
     "should": "*",
-    "supertest": "*"
+    "supertest": "*",
+    "mongoq": "*"
   },
   "devDependencies": {
     "xunit-file": "*",
     "mocha": "*",
-    "jshint": "*"
+    "jshint": "*",
+    "sinon": "*"
   }
 }

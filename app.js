@@ -7,7 +7,8 @@ var express = require('express')
 	, http = require('http')
 	, path = require('path')
 	, logger = require('./lib/logger')
-	, config = require('./config/config')
+	, config = require('./config/_config')
+	, api = require('./routes/apis/load_api.js')
 	;
 
 var app = express();
@@ -31,7 +32,11 @@ if ('development' === app.get('env')) {
 	app.use(express.errorHandler());
 }
 
+// all API endpoints are automatically routes
+app.all('/api/:version/:method', api.execute);
+
 app.get('/sample', sample.index);
+
 
 http.createServer(app).listen(config.get('app:port'), function () {
 	logger.i('APP', 'Express server listening on port ' + 
